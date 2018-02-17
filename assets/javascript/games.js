@@ -9,8 +9,8 @@ var winCount = 0;
 var lossCount = 0;
 var guessesRemain = 11;
 
-function start(round) {
-  
+function start() {
+
     computerPick = wordList[Math.floor(Math.random() * wordList.length)];
     wordsLetters = computerPick.split("");
     numBlanks = wordsLetters.length;
@@ -22,7 +22,7 @@ function start(round) {
     for (var i = 0; i < numBlanks; i++) {
         blanksAndSuccess.push("_");
     }
-    
+
     document.getElementById("enterGuess").innerHTML = blanksAndSuccess.join("  ");
     document.getElementById("guessRemaining").innerHTML = guessesRemain;
     document.getElementById("totalWins").innerHTML = winCount;
@@ -63,19 +63,17 @@ function roundFinish() {
 
     if (wordsLetters.toString() == blanksAndSuccess.toString()) {
         winCount++;
-        var img = new img("");
-        audio.play();
         alert("Winner, Winner, Fish Dinner!");
         document.getElementById("totalWins").innerHTML = winCount;
-
+        document.getElementById("sidebarpic").src="assets/images/fi.png";
         start();
     }
 
     else if (guessesRemain == 0) {
         lossCount++;
         alert("You're Shrimp Out of Luck! Try Again!");
-
         document.getElementById("totalLosses").innerHTML = lossCount;
+        document.getElementById("sidebarpic").src="assets/images/sad.png";
         start();
     }
 }
