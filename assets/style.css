@@ -1,0 +1,94 @@
+body {
+	background-image: url(http://unisci24.com/data_images/wlls/12/212984-coral.jpg);
+	line-height:2em;
+	font-family: fantasy;
+}
+.container {
+    overflow: hidden;
+}
+#mainheader {
+    background-color:rgb(255, 255, 255,0.0);
+}
+#subheader {
+    background-color: rgb(255, 255, 255,0.5);
+}
+#sidebar {
+    padding:1rem;
+    max-height:50vh;
+    background-color:rgb(255, 255, 230,0.5);
+    position:relative;
+}
+#maskvalue {
+    letter-spacing:0.25em;
+}
+
+#gamearea {
+    padding:0rem;
+    max-height:50vh;
+    background-color: rgb(255, 255, 230,0.5);
+    
+    float:left;
+    position:relative;
+}
+
+#statsRow {
+	background-color:rgb(255, 255, 230,0.5);
+	color: black;
+	margin-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    #sidebar {
+        height:150px;
+    }
+    #letterRow {
+        display:block;
+    }
+
+}
+
+@media screen and (min-width: 600px) {
+    #mainheader {
+        font-size:5rem;
+    }
+    #letterRow {
+        display:block;
+    }
+
+}
+
+.sidebarimg, .sidebarbkgrndimg {
+    max-height:100%;
+    max-width:100%;
+    z-index:2;
+}
+
+#sidebarpic, #sidebarbkgrnd {
+    opacity: 1;
+    position: absolute;
+    margin:auto;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+}
+
+.bkgrnd {
+	z-index:1;
+}
+.img-responsive {
+    margin: 0 auto;
+}
+
+#enterGuess {
+    font-weight:bold;
+    font-size:2rem;
+}
+
+tr {
+    padding:0px;
+}
+td {
+    text-align:center;
+    font-size:1.5em;
+}

@@ -7,14 +7,14 @@ var wrongLetters = [];
 
 var winCount = 0;
 var lossCount = 0;
-var guessesRemain = 9;
+var guessesRemain = 11;
 
-function start() {
+function start(round) {
     computerPick = wordList[Math.floor(Math.random() * wordList.length)];
     wordsLetters = computerPick.split("");
     numBlanks = wordsLetters.length;
 
-    guessesRemain = 9;
+    guessesRemain = 11;
     wrongLetters = [];
     blanksAndSuccess = [];
 
@@ -22,10 +22,10 @@ function start() {
         blanksAndSuccess.push("_");
     }
 
-    document.getElementById("wordToGuess").innerHTML = blanksAndSuccess.join("  ");
-    document.getElementById("guessLeft").innerHTML = guessesRemain;
-    document.getElementById("wins").innerHTML = winCount;
-    document.getElementById("losses").innerHTML = lossCount;
+    document.getElementById("enterGuess").innerHTML = blanksAndSuccess.join("  ");
+    document.getElementById("guessremaining").innerHTML = guessesRemain;
+    document.getElementById("totalWins").innerHTML = winCount;
+    document.getElementById("totalLosses").innerHTML = lossCount;
 }
 
 function compareLetters(letter) {
@@ -54,16 +54,18 @@ function compareLetters(letter) {
 }
 
 function roundFinish() {
-    console.log("Win Count: " + winCount + " | Loss Count: " + lossCount + " | Guesses Left" + guessesRemain);
+    console.log("Win Count: " + winCount + " | Loss Count: " + lossCount + " | Guesses Left: " + guessesRemain);
 
-    document.getElementById("guessLeft").innerHTML = guessesRemain;
-    document.getElementById("wordToGuess").innerHTML = blanksAndSuccess.join(" ");
-    document.getElementById("wrongGuess").innerHTML = wrongLetters.join(" ");
+    document.getElementById("guessremaining").innerHTML = guessesRemain;
+    document.getElementById("enterGuess").innerHTML = blanksAndSuccess.join(" ");
+    document.getElementById("lettersguessed").innerHTML = wrongLetters.join(" ");
 
     if (wordsLetters.toString() == blanksAndSuccess.toString()) {
         winCount++;
-        alert("Winner, Winner Fish Dinner!");
-        document.getElementById("wins").innerHTML = winCount;
+        var img = new img("");
+        audio.play();
+        alert("Winner, Winner, Fish Dinner!");
+        document.getElementById("totalWins").innerHTML = winCount;
 
         start();
     }
@@ -72,7 +74,7 @@ function roundFinish() {
         lossCount++;
         alert("You're Shrimp Out of Luck! Try Again!");
 
-        document.getElementById("losses").innerHTML = lossCount;
+        document.getElementById("totalLosses").innerHTML = lossCount;
         start();
     }
 }
