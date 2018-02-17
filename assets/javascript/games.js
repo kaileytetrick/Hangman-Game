@@ -1,4 +1,4 @@
-var wordList = ["jellyfish", "shark", "octopus", "seahorse", "dolphin", "lionfish", "shrimp", "crab", "lobster", "frogfish", "orca", "squid", "stingray", "coral"];
+var wordList = ["jellyfish", "shark", "octopus", "seahorse", "dolphin", "lionfish", "stingray",];
 var computerPick = "";
 var wordsLetters = [];
 var numBlanks = 0;
@@ -22,17 +22,10 @@ function start() {
         blanksAndSuccess.push("_");
     }
 
-    document.getElementById("wordToGuess").innerHTML = blanksAndSuccess.join("");
+    document.getElementById("wordToGuess").innerHTML = blanksAndSuccess.join("  ");
     document.getElementById("guessLeft").innerHTML = guessesRemain;
     document.getElementById("wins").innerHTML = winCount;
     document.getElementById("losses").innerHTML = lossCount;
-
-    //This is your debugging remove if you want later
-    console.log(computerPick);
-    console.log(wordsLetters);
-    console.log(numBlanks);
-    console.log(blanksAndSuccess);
-
 }
 
 function compareLetters(letter) {
@@ -69,7 +62,7 @@ function roundFinish() {
 
     if (wordsLetters.toString() == blanksAndSuccess.toString()) {
         winCount++;
-        alert("YOU WIN!");
+        alert("Winner, Winner Fish Dinner!");
         document.getElementById("wins").innerHTML = winCount;
 
         start();
@@ -77,7 +70,7 @@ function roundFinish() {
 
     else if (guessesRemain == 0) {
         lossCount++;
-        alert("YOU LOSE!");
+        alert("You're Shrimp Out of Luck! Try Again!");
 
         document.getElementById("losses").innerHTML = lossCount;
         start();
@@ -90,7 +83,4 @@ document.onkeydown = function (event) {
     var letterPicked = String.fromCharCode(event.keyCode).toLowerCase();
     compareLetters(letterPicked);
     roundFinish();
-
-    //More debugging to remove
-    console.log(letterPicked);
 }
