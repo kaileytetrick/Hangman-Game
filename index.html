@@ -13,23 +13,28 @@
     <title>Hangman-Game</title>
 </head>
 
-<body>
+<body background="assets/images/undersea.jpg">
 
     <div class="container">
 
         <div class="row">
-            <div class="col-xs-12 col-md-12 h1 text-center" id="mainheader">Hangman Under the Sea</div>
-            <div class="col-xs-12 col-md-12 h3 text-center" id="subheader">Press Any Key to Get Started!</div>
+            <div class="col-xs-12 col-md-12 h1 text-center" id="mainHeader">Hangman Under the Sea</div>
+            <div>
+                <audio autoplay>
+                    <source src="assets/audio/sea.mp3" type="audio/mp3">
+                </audio>
+            </div>
+            <div class="col-xs-12 col-md-12 h3 text-center" id="subHeader">Press Any Key to Get Started!</div>
         </div>
 
         <div class="row">
-            <div class="col-xs-12 col-md-6" id="sidebar">
+            <div class="col-xs-12 col-md-6" id="sideBar">
                 <img id="sidebarbkgrnd" style="z-index:2" class="bkgrnd sidebarimg img-responsive center-block" src="" />
-                <img id="sidebarpic" class="sidebarimg img-responsive center-block" src="./assets/images/under-the-sea-may-be-missing-link-in-evolution.jpg" alt="Under the Water Pic"/>
+                <img id="sidebarpic" class="sidebarimg img-responsive center-block" src="assets/images/qm.png" alt="???"/>
             
             </div>
 
-            <div class="col-xs-12 col-md-6" id="gamearea">
+            <div class="col-xs-12 col-md-6" id="gameArea">
                 <table class="table">
                     <tr>
                         <td>Guess the Sea Creature!</td>
@@ -41,13 +46,13 @@
                         <td colspan="11">Number of Guesses Remaining:</td>
                     </tr>
                     <tr>
-                        <td id="guessremaining">11</td>
+                        <td id="guessRemaining">11</td>
                     </tr>
                     <tr>
                         <td>Letters Already Guessed:</td>
                     </tr>
                     <tr>
-                        <td rowspan="2" id="lettersguessed"></td>
+                        <td rowspan="2" id="lettersGuessed"></td>
                     </tr>
                 </table>
             </div>
@@ -56,7 +61,7 @@
         <div id="letterRow" class="col-xs-12 col-md-12 text-center"></div>
 
         <div class="row">
-            <div id="statsRow" class="col-xs-12 col-md-12 text-center">
+            <div id="statsRow" class="col-xs-3 col-md-3 text-left">
                 <h2>Total Wins: <span id="totalWins"></span></h2>
                 <h2>Total Losses: <span id="totalLosses"></span></h2>
             </div>

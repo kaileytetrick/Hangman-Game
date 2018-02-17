@@ -10,6 +10,7 @@ var lossCount = 0;
 var guessesRemain = 11;
 
 function start(round) {
+  
     computerPick = wordList[Math.floor(Math.random() * wordList.length)];
     wordsLetters = computerPick.split("");
     numBlanks = wordsLetters.length;
@@ -21,9 +22,9 @@ function start(round) {
     for (var i = 0; i < numBlanks; i++) {
         blanksAndSuccess.push("_");
     }
-
+    
     document.getElementById("enterGuess").innerHTML = blanksAndSuccess.join("  ");
-    document.getElementById("guessremaining").innerHTML = guessesRemain;
+    document.getElementById("guessRemaining").innerHTML = guessesRemain;
     document.getElementById("totalWins").innerHTML = winCount;
     document.getElementById("totalLosses").innerHTML = lossCount;
 }
@@ -56,9 +57,9 @@ function compareLetters(letter) {
 function roundFinish() {
     console.log("Win Count: " + winCount + " | Loss Count: " + lossCount + " | Guesses Left: " + guessesRemain);
 
-    document.getElementById("guessremaining").innerHTML = guessesRemain;
+    document.getElementById("guessRemaining").innerHTML = guessesRemain;
     document.getElementById("enterGuess").innerHTML = blanksAndSuccess.join(" ");
-    document.getElementById("lettersguessed").innerHTML = wrongLetters.join(" ");
+    document.getElementById("lettersGuessed").innerHTML = wrongLetters.join(" ");
 
     if (wordsLetters.toString() == blanksAndSuccess.toString()) {
         winCount++;

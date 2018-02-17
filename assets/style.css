@@ -1,44 +1,44 @@
 body {
-	background-image: url(http://unisci24.com/data_images/wlls/12/212984-coral.jpg);
 	line-height:2em;
 	font-family: fantasy;
-}
-.container {
-    overflow: hidden;
-}
-#mainheader {
-    background-color:rgb(255, 255, 255,0.0);
-}
-#subheader {
-    background-color: rgb(255, 255, 255,0.5);
-}
-#sidebar {
-    padding:1rem;
-    max-height:50vh;
-    background-color:rgb(255, 255, 230,0.5);
-    position:relative;
-}
-#maskvalue {
-    letter-spacing:0.25em;
+	color: white;
 }
 
-#gamearea {
-    padding:0rem;
-    max-height:50vh;
-    background-color: rgb(255, 255, 230,0.5);
-    
-    float:left;
-    position:relative;
+.container {
+	padding: 40px;
+}
+
+#subHeader {
+	padding-bottom: -10, 0, 30, 0;
+}
+
+#sidebarpic {
+	max-height:50vh;
+	position: relative;
+	display: block;
+	margin: 0 auto;
+}
+
+#enterGuess {
+    letter-spacing: 1px;
+}
+
+#gameArea {
+	max-height: 50vh;
+	padding: 0, 20px;
+    float: left;
+    position: relative;
 }
 
 #statsRow {
-	background-color:rgb(255, 255, 230,0.5);
-	color: black;
-	margin-top: 20px;
+	color: white;
+	font-size: 25px;
+	padding-top: 40px;
+	line-break: 8px;
 }
 
 @media screen and (max-width: 600px) {
-    #sidebar {
+    #sideBar {
         height:150px;
     }
     #letterRow {
@@ -48,29 +48,24 @@ body {
 }
 
 @media screen and (min-width: 600px) {
-    #mainheader {
+    #mainHeader {
         font-size:5rem;
     }
     #letterRow {
         display:block;
     }
-
 }
 
 .sidebarimg, .sidebarbkgrndimg {
-    max-height:100%;
-    max-width:100%;
-    z-index:2;
+    max-height: 50vh;
+    max-width: auto;
+	z-index:2;
 }
 
 #sidebarpic, #sidebarbkgrnd {
     opacity: 1;
     position: absolute;
-    margin:auto;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
+	margin: auto;
 }
 
 .bkgrnd {
@@ -92,3 +87,11 @@ td {
     text-align:center;
     font-size:1.5em;
 }
+.letter {
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    padding: 2px;
+    float: left;
+    margin: 2px;
+  }
